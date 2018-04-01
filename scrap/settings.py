@@ -30,7 +30,7 @@ SECRET_KEY = '!0d4xob9#n(%!)e2ho#2=ltxoq*k920+amokgs)+xa_c197e34'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', ]
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'mp-vehicle-info.herokuapp.com', ]
 
 
 # Application definition
@@ -125,6 +125,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+SITE_ID = 1
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
