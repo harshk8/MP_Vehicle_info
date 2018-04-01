@@ -110,41 +110,41 @@ def api_article(request, registrationnum=None):
 
 # Create your views here.
 
-def testwork(request):
-    # page = requests.get("http://dataquestio.github.io/web-scraping-pages/simple.html")
-    page = requests.get("http://mis.mptransport.org/MPLogin/eSewa/VehicleSearch.aspx")
+# def testwork(request):
+#     # page = requests.get("http://dataquestio.github.io/web-scraping-pages/simple.html")
+#     page = requests.get("http://mis.mptransport.org/MPLogin/eSewa/VehicleSearch.aspx")
 
-    soup = BeautifulSoup(page.content, 'html.parser')
-    # import pdb;pdb.set_trace()
+#     soup = BeautifulSoup(page.content, 'html.parser')
+#     # import pdb;pdb.set_trace()
 
-    cookies = page.cookies
+#     cookies = page.cookies
 
-    soup = BeautifulSoup(r.text, 'html.parser')
-    viewstate = soup.select('input[name="javax.faces.ViewState"]')[0]['value']
+#     soup = BeautifulSoup(r.text, 'html.parser')
+#     viewstate = soup.select('input[name="javax.faces.ViewState"]')[0]['value']
 
-    data = {
-        'javax.faces.partial.ajax':'true',
-        'javax.faces.source':'convVeh_Form:j_idt21',
-        'javax.faces.partial.execute':'@all',
-        'javax.faces.partial.render':'convVeh_Form:rcPanel',
-        'convVeh_Form:j_idt21':'convVeh_Form:j_idt21',
-        'convVeh_Form':'convVeh_Form',
-        'convVeh_Form:tf_reg_no1': first,
-        'convVeh_Form:tf_reg_no2': second,
-        'javax.faces.ViewState': viewstate,
-    }
+#     data = {
+#         'javax.faces.partial.ajax':'true',
+#         'javax.faces.source':'convVeh_Form:j_idt21',
+#         'javax.faces.partial.execute':'@all',
+#         'javax.faces.partial.render':'convVeh_Form:rcPanel',
+#         'convVeh_Form:j_idt21':'convVeh_Form:j_idt21',
+#         'convVeh_Form':'convVeh_Form',
+#         'convVeh_Form:tf_reg_no1': first,
+#         'convVeh_Form:tf_reg_no2': second,
+#         'javax.faces.ViewState': viewstate,
+#     }
 
-    r = requests.post(url=url, data=data, cookies=cookies)
+#     r = requests.post(url=url, data=data, cookies=cookies)
     
-    soup = BeautifulSoup(r.text, 'html.parser')
-    table = SoupStrainer('tr')
-    soup = BeautifulSoup(soup.get_text(), 'html.parser', parse_only=table)
-    print(soup.get_text())
+#     soup = BeautifulSoup(r.text, 'html.parser')
+#     table = SoupStrainer('tr')
+#     soup = BeautifulSoup(soup.get_text(), 'html.parser', parse_only=table)
+#     print(soup.get_text())
 
-    import pdb;pdb.set_trace()
+#     import pdb;pdb.set_trace()
 
 
-    return Response(soup)
+#     return Response(soup)
 
 
 
