@@ -1,3 +1,8 @@
+""" THIS PROJECT IS USED JUST FOR LEARNING PURPOSE, 
+PLEASE DON'T TAKE IT AS A CRIME 
+THERE IS NO OTHER ILIGAL USE OF IT"""
+
+
 """
 Django settings for scrap project.
 
@@ -25,7 +30,7 @@ SECRET_KEY = '!0d4xob9#n(%!)e2ho#2=ltxoq*k920+amokgs)+xa_c197e34'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1',]
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', ]
 
 
 # Application definition
