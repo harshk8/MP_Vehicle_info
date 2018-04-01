@@ -12,7 +12,7 @@ gunicorn==19.7.1
 html5lib==1.0.1
 idna==2.6
 ipaddress==1.0.19
-mechanize==0.3.6
+mechanize==0.2.5
 ordereddict==1.1
 pathlib==1.0.1
 pipenv==11.9.0
