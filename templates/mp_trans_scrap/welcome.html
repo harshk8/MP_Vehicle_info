@@ -1,0 +1,97 @@
+
+ {% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title> Welcome </title>
+
+    <link rel="shortcut icon" href="{%  static "mp_trans_scrap/images/favicon.ico" %}">
+</head>
+<body>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+
+form {
+
+margin-top: 10% !important;
+margin-left: 40% !important;
+
+}
+</style>    
+
+
+
+<form id="vehicle_form" >
+
+    <!-- <div class="form-group"> -->
+        <label for="Vehicle" > Vehicle Number </label>
+        <input type=text placeholder="Enter Vehicle Number" id="vehicle_number" required/>
+    <!-- </div>   -->
+
+<input type="submit" class="btn btn-success" onclick="call_fn()" />
+
+</form>
+
+<script type="text/javascript">
+    
+function call_fn(){
+  var vehicle_number = $("#vehicle_number").val()
+
+
+    $.ajax({
+            url:"http://localhost:8000/testing/"+vehicle_number +"/",            
+            type: 'GET',
+            // data: JSON.stringify(obj),
+            dataType: 'json',
+            crossDomain:true,
+            async:true,
+            // headers: {
+            //   'api-key': "{{settings.api_key}}"
+            // },
+            contentType: 'application/json; charset=utf-8',
+
+            success: function (result) {
+
+                alert(result)
+                debugger
+              // window.sessionStorage.setItem('user-token', result.token);
+              window.localStorage.setItem("user-token", result);
+              $("#customer_login").submit();
+            },
+            error: function (error) {
+                
+                alert(result)
+              err_html = "<div class='note form-error'><p>Sorry, looks like something went wrong. Please correct the following and submit again:</p><ul class='disc'><li>Invalid login credentials.</li></ul></div>";
+              $(".form_errors").html(err_html);
+            }
+        });
+  
+  $.ajax( function(){   
+
+
+
+
+  });
+
+
+}
+
+
+
+</script>
+
+</body>
+</html>
+

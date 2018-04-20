@@ -20,6 +20,10 @@ from mp_trans_scrap import views
 from rest_framework import routers
 
 
+# from django.urls import path
+from django.views.generic import TemplateView
+
+
 router = routers.DefaultRouter()
 # router.register(r'users', views.UserViewSet)
 
@@ -34,8 +38,11 @@ urlpatterns = [
     #Customize views
     # url(r'^testing/$', views.testwork ),
     url(r'^testing/(?P<registrationnum>[\w-]+)/$', views.api_article  ),
+    url(r'^testing/$', views.api_article  ),
     
     #Login, Logout system by rest Framework
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+
+    url(r'^$', TemplateView.as_view(template_name="mp_trans_scrap/welcome.html")),
 ]
 

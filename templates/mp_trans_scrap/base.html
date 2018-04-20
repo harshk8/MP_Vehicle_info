@@ -1,0 +1,59 @@
+<!-- {% load staticfiles %} -->
+{% load static %}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Scrap Info </title>
+<link rel="icon" type="image/png" href="{% static "mp_trans_scrap/images/favicon.ico" %}">
+
+
+
+
+</head>
+
+
+<body>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+<table class="form-group">
+    <tr>
+        <td>Registration Number:</td>
+        <td> {{ registration_num }}</td>
+    </tr>        
+
+    <tr>
+        <td>Owner Name:</td>
+        <td>{{ owner_name }}</td>
+    </tr>        
+
+    <tr>
+        <td>Registration date:</td>
+        <td> {{ regis_date }} </td>
+    </tr>        
+
+    <tr>
+        <td>Model: </td>
+        <td>{{ model }}</td>
+    </tr>        
+
+    <tr>
+        <td>RTO Name:</td>
+        <td> {{ rto_name }} </td>
+    </tr>        
+
+</table>
+
+</body>
+</html>

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
 
@@ -50,6 +50,7 @@ class UserViewSet(viewsets.GenericViewSet, viewsets.ViewSet):
 
 
 def api_article(request, registrationnum=None):
+# def api_article(request):
 
     # import pdb; pdb.set_trace()
     url = "http://mis.mptransport.org/MPLogin/eSewa/VehicleSearch.aspx"
@@ -99,8 +100,12 @@ def api_article(request, registrationnum=None):
                 'rto_name': city_rto,
                 'regis_date':reg_date,
                 }
-            response = data
-        return JsonResponse(response)
+
+        # import pdb; pdb.set_trace()
+        # return JsonResponse(data)
+        # return HttpResponse(data)
+
+        return render_to_response('mp_trans_scrap/base.html', data )
 
     except:
         return HttpResponse("No data found")
